@@ -25,7 +25,10 @@ body {
     align-items: center; /* Center align */
     text-align: center; /* Center text */
 }
-
+.pro span {
+    font-size: 2.5vw; /* Responsive font size based on viewport width */
+    color: #3cf; /* Keep the color */
+}
 button{
     height: 10vh;
     width: 30%;
