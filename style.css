@@ -1,177 +1,201 @@
-*{
+* {
     margin: 0;
     padding: 0;
-}
-body{
-    background-color: #000d1a;
-}
-#portfolio{
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-    background: linear-gradient(45deg,#f06,#3cf);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-left: 630px;
-    margin-top: -90px;
-    font-size: xxx-large;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-.contact{
-    text-transform: uppercase;
-    color: white;
-    margin: 20px;
-    margin-top: 250px;
-    margin-left: 850px;
+body {
+    background-color: #000d1a;
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
+    max-width: 100vw; /* Ensure it doesn't exceed the viewport width */
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
 }
-.information{
-    color: #f06;
-}
-.name{
-    position: absolute;
+
+#portfolio {
     text-transform: uppercase;
-    color:white ;
-    font-size: xx-large;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 20px;
-    margin-left: 650px;
-    margin-top: -350px;
-    background: linear-gradient(45deg,#f06,#3cf);
+    background: linear-gradient(45deg, #f06, #3cf);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    font-size: 5vw; /* Responsive font size */
+    margin-top: 2rem; /* Adjust margin for spacing */
+    align-items: center; /* Center align */
+    text-align: center; /* Center text */
 }
-a:link{
+
+button{
+    height: 10vh;
+    width: 30%;
+    max-width: 120px;
+    background-color: #3cf ;
+    color: #f06;
+    text-transform: capitalize;
+    font-weight: bolder;
+    border: solid #f06 5px;
+    box-sizing: border-box;
+    margin: 50px auto;
+}
+
+.information {
+    color: #f06;
+    margin: 1rem;
+    text-align: right;
+    
+}
+.pro{
+    color: #f06;
+    font-size: 1.4vw;
+    margin: 20px;
+}
+.exp{
+    margin: 2rem;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.name {
+    text-transform: uppercase;
+    color: #3cf;
+    font-size: 2vw; /* Responsive font size */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 3rem; /* General margin */
+}
+
+.links-container {
+    display: flex;
+    justify-content:flex-end ; /* Center the links horizontally */
+    gap: 20px;
+    width: 100%;
+    margin: 5px; /* Adjust margin */
+}
+
+a:link {
     text-decoration: none;
     text-transform: uppercase;
     color: #f06;
-    background-color: transparent;
-    float: right;
-    margin: 40px;
-    margin-top: -50px;
+    margin: 10px; /* Remove margin to prevent vertical spacing */
+    display: inline-block;
+    padding: 10px; /* Optional: Add some padding for better appearance */
 }
+
+
+/* Hover, visited, and focus states */
 a:visited {
     color: #3cf;
 }
 
-/* Target hovered links */
 a:hover {
     color: chartreuse;
 }
 
-/* Target active links */
 a:active {
     color: orangered;
 }
 
-/* Target focused links */
 a:focus {
     color: aqua;
 }
-    
-#skill{
-    text-transform: uppercase;
-    color: #f06;
-    font-size: x-large;
-    margin: 20px;
-    margin-left: 650px;
-    margin-top: -300px;
-}
-.home-img{
-    width: 410px;
-    height: 410px;
-    margin: 30px;
-    margin-top: 140px;
-}
 
-.home-img .glowing-circle{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+ 
+.portfolio-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 2rem;
+    margin: 2rem;
+    flex-wrap: wrap;
 }
-.home-img .glowing-circle::after{
-    content: '';
-    position: absolute;
-    width: 380px;
-    height: 380px;
-    background: #000d1a;
-    border-radius: 50%;
-}
-
-.glowing-circle span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#f06,#3cf);
-    border-radius: 50%;
-}
-
-.glowing-circle span:nth-child(1) {
-    filter: blur(10px);
-}
-
-.glowing-circle .image {
+.home-img {
     position: relative;
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    z-index: 1;
-    overflow: hidden;
+    width: 100%; /* Full width of the parent */
+    max-width: 200px; /* Maximum width for responsiveness */
+    margin: 10px 0 0 3rem; /* General margin */
+    margin-top: 30px; /* Top margin for spacing */
+    display: flex; /* add this */
+    justify-content: flex-end; /* add this */
+    float: left;
+    
 }
 
+.image {
+    position: relative;
+    width: 100%; /* Full width */
+    padding-top: 100%; /* Makes the container a square */
+    overflow: hidden; /* Hides overflow for the square shape */
+    border-radius: 20px;
+}
+
+/* Image styles */
 .image img {
     position: absolute;
-    left: 50%;
-    top: -50px;
-    transform: translateX(-50%);
-    max-width: 350px;
-    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%; /* Scale the image to the container's width */
+    height: 100%; /* Ensure the image covers the square */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+#skill {
+    text-transform: capitalize;
+    color: #f06;
+    font-size: 1.5vw;
+    text-align: justify; /* Justify text alignment */
+    flex-grow: 1; /* Allow skill text to grow and fill remaining space */
+    padding: 1rem;
+    line-height: 1.5;
+    max-width: 1000px; 
+    margin-top: 0;
+}
+/* Half border for left side */
+.home-img::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 50%; /* Half width */
+    height: 50%; /* Half height */
+    border-left: 10px solid #3cf; /* Left half border */
+    border-top: 10px solid #3cf; /* Top half border */
+    margin: -30px;    
+   
 }
 
-@media screen and (max-width:600px){
-    #portfolio{
-        position: absolute;
-        text-align: center;
-        text-transform: uppercase;
-        background: linear-gradient(45deg,#f06,#3cf);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-size: xxx-large;
-        margin-left: 100px;
-        margin-top: -120px;
+/* Half border for right side */
+.home-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Align to the bottom */
+    right: 0; /* Align to the right */
+    width: 50%; /* Half width */
+    height: 50%; /* Half height */
+    border-right: 10px solid #f06; /* Right half border */
+    border-bottom: 10px solid #f06; /* Bottom half border */
+    margin: -30px; 
+     
+}
+.info{
+    text-transform: capitalize;
+    color: #3cf;
+    margin: 2rem;
+    text-align: right;
+}
+@media (max-width: 768px) {
+    .name {
+        font-size: 5vw; /* Adjust font size for smaller screens */
     }
-    #skill{
-        text-transform: uppercase;
-        color: #f06;
-        font-size: x-large;
-        margin: 20px;
-        margin-top: 150px;
+    #portfolio {
+        font-size: 4vw; /* Smaller font size on mobile */
     }
-    .name{
-        position: absolute;
-        text-transform: uppercase;
-        color:white ;
-        font-size: xx-large;
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 20px;
-        background: linear-gradient(45deg,#f06,#3cf);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+    button {
+        height: 8vh; /* Adjust button height */
+        width: 80%; /* Full width on smaller screens */
     }
-    .contact{
-        text-transform: uppercase;
-        color: white;
-        margin: 20px;
-        
+    .portfolio-container {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: center; /* Center items */
     }
-    
-    }
+}
 
 
